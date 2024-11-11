@@ -15,6 +15,6 @@ phases:
       - echo Build iniciado em `date`
       - echo Compiling the Node.js code
       - npm install --loglevel=error
-      - NODE_OPTIONS=--openssl-legacy-provider REACT_APP_API_URL=$REACT_APP_API_URL SKIP_PREFLIGHT_CHECK=true npm run build --prefix client
+      - REACT_APP_API_URL=$REACT_APP_API_URL SKIP_PREFLIGHT_CHECK=true npm run build --prefix client
       - echo Runt Unit Tests...
       - npm test
