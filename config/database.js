@@ -25,16 +25,14 @@ async function getRemoteDialectOptions() {
 async function getConfig(){
   let dbConfig = {
     username: process.env.DB_USER || "postgres",
-    password: process.env.DB_PWD || "IOFr[-9.Bo#!1daezOe8Jfo4*L?U",
+    password: process.env.DB_PWD || "postgres",
     database: "bia",
-    host: process.env.DB_HOST || "bia.cn0q064cuyrd.us-east-2.rds.amazonaws.com",
+    host: process.env.DB_HOST || "127.0.0.1",
     port: process.env.DB_PORT || 5433,
     dialect: "postgres",
     dialectOptions: await isLocalConnection() ? {} : await getRemoteDialectOptions(),
   };
-
-  console.log(dbConfig)
-
+  
   if(process.env.DB_SECRET_NAME && process.env.DB_SECRET_NAME.trim() !== '' ){
     const secretsManagerClient = await createSecretsManagerClient();
     const secrets = await getSecrets(secretsManagerClient);
