@@ -25,9 +25,9 @@ async function getRemoteDialectOptions() {
 async function getConfig(){
   let dbConfig = {
     username: process.env.DB_USER || "postgres",
-    password: process.env.DB_PWD || "postgres",
+    password: process.env.DB_PWD || "IOFr[-9.Bo#!1daezOe8Jfo4*L?U",
     database: "bia",
-    host: process.env.DB_HOST || "127.0.0.1",
+    host: process.env.DB_HOST || "bia.cn0q064cuyrd.us-east-2.rds.amazonaws.com",
     port: process.env.DB_PORT || 5433,
     dialect: "postgres",
     dialectOptions: await isLocalConnection() ? {} : await getRemoteDialectOptions(),
