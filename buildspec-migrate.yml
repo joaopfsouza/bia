@@ -11,7 +11,7 @@ phases:
     commands:
       - echo Build iniciado em `date`
       - echo Create Database
-      - npx sequelize db:create
+      - npx sequelize db:create 2>/dev/null
       - echo Migrate Database
-      - npx sequelize db:migrate
+      - npx sequelize db:migrate 2>/dev/null
       - echo Build finalizado em `date`
