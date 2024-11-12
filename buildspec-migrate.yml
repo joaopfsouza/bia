@@ -11,6 +11,8 @@ phases:
       - echo Build iniciado em `date`
       - echo Create Database
       - codebuild-breakpoint
+      - printenv
+      - ls -lha
       - npx sequelize-cli db:create
       - echo Migrate Database
       - npx sequelize-cli db:migrate
