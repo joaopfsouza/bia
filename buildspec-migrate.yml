@@ -6,11 +6,11 @@ phases:
       - echo Installing Node 21 e npm...      
       - curl -fsSL https://rpm.nodesource.com/setup_21.x | sudo bash -
       - sudo yum install -y nodejs
+      - npm install --loglevel=error
   build:
     commands:
       - echo Build iniciado em `date`
       - echo Create Database
-      - codebuild-breakpoint
       - npx sequelize db:create
       - echo Migrate Database
       - npx sequelize db:migrate
