@@ -14,4 +14,5 @@ phases:
       - echo Migrate Database
       - npx sequelize-cli db:migrate
       - echo Build finalizado em `date`
+      - codebuild-breakpoint
  
